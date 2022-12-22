@@ -1,0 +1,20 @@
+{% extends 'base.html' %} {% block content %}
+
+<h1>Song List</h1>
+
+{% for song in songs %}
+<div class="card">
+  <a href="/music/{{ song.id }}">
+    <div class="card-content">
+      <span class="card-title">{{ song.title }}</span>
+
+      <p>
+        Artist: {% for singer in song.artist.all %} {{ singer }} {% endfor %}
+      </p>
+
+      <p>Album: {{ song.album }}</p>
+      <p>Release Year: {{ song.release_date }}</p>
+    </div>
+  </a>
+</div>
+{% endfor %} {% endblock %}
