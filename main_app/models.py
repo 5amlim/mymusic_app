@@ -33,7 +33,6 @@ class Music(models.Model):
         return reverse('detail', kwargs={'song_id': self.id})
     
     def popular_today(self):
-        print(f'🪲 {date.today()}')
         return self.session_set.filter(date=date.today()).count() >= 5
 
 
@@ -49,3 +48,9 @@ class Session(models.Model):
     class Meta:
         ordering = ['-date']
 
+class Photo(models.Model):
+    url = models.CharField(max_length=200)
+    song = models.ForeignKey(Music, on_delete=models.CASCADE)
+
+    def __str__(self):
+        return f"Photo for song_id: {self.song_id} @{self.url}"

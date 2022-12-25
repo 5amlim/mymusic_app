@@ -18,4 +18,6 @@ urlpatterns = [
     path('accounts/signup/', views.signup, name='signup'),
     path('music/<int:song_id>/assoc_artist/<int:artist_id>/', views.assoc_artist, name='assoc_artist'),
     path('music/<int:song_id>/remove_artist/<int:artist_id>/', views.remove_artist, name='remove_artist'),
+    path('music/<int:song_id>/add_photo/', views.add_photo, name='add_photo'),
+
 ]
