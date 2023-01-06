@@ -1,1 +1,1 @@
-web = gunicorn.finchcollector.wsgi.application'
+web = gunicorn finchcollector.wsgi.application'
